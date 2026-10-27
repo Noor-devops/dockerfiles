@@ -16,6 +16,6 @@ ENV course=${course} \
     trainer=${trainer}
 COPY index.html /usr/share/nginx/html/index.html
 ONBUILD COPY index.html /usr/share/nginx/html/
-ENTRYPOINT ["nginx", "-g", "daemon off;"]
+ENTRYPOINT ["nginx"]
 USER roboshop
-CMD [sleep 1000]
+CMD [ "-g", "daemon off;" ]
