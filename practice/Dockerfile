@@ -4,8 +4,6 @@ RUN mkdir /app
 WORKDIR /app
 RUN useradd roboshop
 RUN dnf install nginx -y 
-RUN dnf enable nginx -y
-RUN dnf start nginx -y
 LABEL author="Noor Shanu" \
       course="docker" \
       duration="10hrs"
