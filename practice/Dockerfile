@@ -13,8 +13,8 @@ ARG course="Devops" \
 ENV course=${course} \
     duration=${duration} \
     trainer=${trainer}
-COPY index.html /usr/share/nginx/html/index.html
-ONBUILD COPY index.html /usr/share/nginx/html/
+COPY html/ /usr/share/nginx/html/
+ONBUILD COPY html/index.html /usr/share/nginx/html/
 #ENTRYPOINT ["nginx"]
 USER roboshop
 CMD [ "nginx", "-g", "daemon off;" ]
