@@ -1,8 +1,8 @@
 ARG version
 FROM almalinux:${version:-9}
 WORKDIR /app
-RUN useradd roboshop \
-    && dnf install nginx -y \
+RUN dnf install nginx -y \
+    && rm -rf /usr/share/nginx/html/*
     && dnf clean all
 LABEL author="Noor Shanu" \
       course="docker" \
