@@ -1,6 +1,5 @@
 ARG version
 FROM almalinux:${version:-9}
-RUN mkdir /app
 WORKDIR /app
 RUN useradd roboshop
 RUN dnf install nginx -y 
@@ -16,6 +15,6 @@ ENV course=${course} \
     trainer=${trainer}
 COPY index.html /usr/share/nginx/html/index.html
 ONBUILD COPY index.html /usr/share/nginx/html/
-ENTRYPOINT ["nginx"]
+#ENTRYPOINT ["nginx"]
 USER roboshop
-CMD [ "-g", "daemon off;" ]
+CMD [ "nginx", "-g", "daemon off;" ]
