@@ -17,5 +17,5 @@ ENV course=${course} \
 COPY html/ /usr/share/nginx/html/
 #ONBUILD COPY html/index.html /usr/share/nginx/html/
 #ENTRYPOINT ["nginx"]
-USER roboshop
+#USER roboshop
 CMD [ "nginx", "-g", "daemon off;" ]
